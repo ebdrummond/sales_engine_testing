@@ -1,9 +1,9 @@
 require 'csv'
 require 'time'
-# require 'lib/load_files'
+require_relative 'load_files'
 
 class Invoice
-  attr_reader :id, :customer_id, :merchant_id, :status, :created_at, :updated_at
+  attr_reader :id, :customer_id, :merchant_id, :status, :created_at, :updated_at, :invoices
 
   def initialize(input)
     @id = input["id"]
@@ -14,15 +14,15 @@ class Invoice
     @updated_at = Time.parse(input["updated_at"])
   end
 
+  def self.load
+    @invoices = LoadFiles.new.load_invoices_file
+    puts @invoices
+ end
 
-
- #  def self.load
- #    @invoices = LoadFiles.new.load_invoices_files
- #    puts @invoices
- # end
-
- #  def self.all
- #    @invoices
- #  end
-
+  def self.all
+    @invoices
+  end
 end
+
+Invoice.load
+
