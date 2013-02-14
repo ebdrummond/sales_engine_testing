@@ -4,12 +4,18 @@ require_relative 'invoice'
 class LoadFiles
 
  def load_invoices_file
-    invoices_file = CSV.open("./data/test_invoices.csv", headers: true, header_converters: :symbol)
+    invoices_file = CSV.open("../data/test_invoices.csv", headers: true)
     invoices_data = []
 
     invoices_file.each do |row|
-      invoices_data.push(Invoice.new(row))
+      invoice = Invoice.new(row)
+      puts invoice
     end
-    return invoices_data
   end
 end
+
+LoadFiles.new.load_invoices_file
+
+
+
+  # invoices_data.add(Invoice.new(row))
