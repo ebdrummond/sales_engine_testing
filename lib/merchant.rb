@@ -7,6 +7,7 @@ class Merchant
 
 
   def initialize(input)
+    puts input
     @id = input["id"]
     @name = input["name"]
     @created_at = Time.parse(input["created_at"])
@@ -14,7 +15,7 @@ class Merchant
   end
 
   def to_s
-    "#{@id} #{@name} #{@updated_at}"
+    "#{@id} #{@name} #{@created_at} #{@updated_at}"
   end
 
 
