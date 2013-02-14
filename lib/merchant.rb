@@ -13,6 +13,10 @@ class Merchant
     @updated_at = Time.parse(input["updated_at"])
   end
 
+  def to_s
+    "#{@id} #{@name} #{@updated_at}"
+  end
+
 
 
  #  def self.load
