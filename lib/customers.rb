@@ -14,6 +14,9 @@ class Customer
     @updated_at = Time.parse(input["updated_at"])
   end
 
+  def to_s
+    "#{@id} #{@first_name} #{@last_name} #{@created_at} #{@updated_at}"
+  end
 
 
  #  def self.load

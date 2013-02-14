@@ -16,7 +16,9 @@ class Item
     @updated_at = Time.parse(input["updated_at"])
   end
 
-
+  def to_s
+    "#{@id} #{@name} #{@description} #{@unit_price} #{@merchant_id} #{@created_at} #{@updated_at}"
+  end
 
  #  def self.load
  #    @invoices = LoadFiles.new.load_invoices_files

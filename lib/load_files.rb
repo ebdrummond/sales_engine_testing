@@ -9,7 +9,6 @@ class LoadFiles
 
     invoices_file.each do |row|
       invoice = Invoice.new(row)
-      puts invoice
     end
   end
 end
